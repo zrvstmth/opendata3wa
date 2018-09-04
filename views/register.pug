@@ -1,0 +1,19 @@
+extends master.pug
+
+block content
+    div.container_register
+        div.page_hero
+            h1.titles Inscription
+            form(action="login" method="POST")
+                div.input
+                    input(type="text" for="firstname" placeholder="Prénom")
+                div.input
+                    input(type="text" for="lastname" placeholder="Nom")
+                div.input
+                    input(type="mail" for="mail" placeholder="john.doe@gmail.com")
+                div.input
+                    input(type="text" for="password" placeholder="*************")
+                div.input
+                    input(type="text" for="password_confirm" placeholder="*************")
+                div.btn
+                    button(type="submit") OK

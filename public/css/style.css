@@ -1,0 +1,107 @@
+body {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Slabo 27px', serif;
+}
+.container_website .header {
+    padding: 100px 0;
+}
+.page_hero h1 {
+    margin: 0 0 100px 0;
+}
+.header {
+    text-align: right;
+}
+.header .btn:first-child {
+    padding-right: 10px;
+}
+.header .btn {
+    display: inline-block;
+    transition: all ease 0.4s;
+}
+.header .btn:hover a{
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+}
+.btn a{
+    text-decoration: none;
+    color: black;
+    transition: all ease 0.4s;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+.btn a{
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: white;
+    border: 1px solid black;
+    padding: 20px 40px;
+    transition: all ease 0.3s;
+}
+.titles {
+    color: black;
+    text-transform: uppercase;
+}
+
+form button[type="submit"] {
+    background-color: white;
+    border: none;
+    border: 1px solid black;
+    padding: 15px 30px;
+    outline: none;
+    font-size: 18px;
+    transition: all ease 0.4s;
+    cursor: pointer;
+}
+form button[type="submit"]:hover  {
+    background-color: black;
+    color: white;
+}
+/* LOGIN */
+.container_login form{
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.container_login .input {
+    width: 100%;
+}
+.container_login .input input, .container_login button {
+    width: 100%;
+}
+.container_login form > * {
+    padding-bottom: 40px;
+}
+/* .input {
+    padding-bottom: 40px;
+} */
+.input input{
+    border: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    outline: none;
+    font-size: 18px;
+}
+/* register */
+.container_register form{
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.container_register .input {
+    width: 100%;
+}
+.container_register .input input, .container_register button {
+    width: 100%;
+}
+.container_register form > * {
+    padding-bottom: 40px;
+}
