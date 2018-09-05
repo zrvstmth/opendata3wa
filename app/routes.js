@@ -2,6 +2,7 @@ const User = require('./models/user.model');
 
 module.exports = function(app) {
     // Gestion des routes
+    // Quelque part
     app.get('/', function(req, res) {
         res.render('index', {pseudo: "Tim"});
     });
