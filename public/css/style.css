@@ -105,3 +105,13 @@ form button[type="submit"]:hover  {
 .container_register form > * {
     padding-bottom: 40px;
 }
+
+/* errors */
+.error {
+    font-size: 18px;
+    padding: 20px;
+    /* font-weight: bold; */
+    background-color: #f44242;
+    color: white;
+    border: 1px solid grey;
+}

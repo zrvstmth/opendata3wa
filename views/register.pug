@@ -1,19 +1,21 @@
 extends master.pug
-
 block content
+    if err
+        each val in err
+            p.error Il y a une erreur: #{val.message}
     div.container_register
         div.page_hero
             h1.titles Inscription
-            form(action="login" method="POST")
+            form(action="/register" method="POST")
                 div.input
-                    input(type="text" for="firstname" placeholder="Prénom")
+                    input(type="text" name="firstname" placeholder="Prénom", value=(user && user.firstname))
                 div.input
-                    input(type="text" for="lastname" placeholder="Nom")
+                    input(type="text" name="lastname" placeholder="Nom", value=(user && user.lastname))
                 div.input
-                    input(type="mail" for="mail" placeholder="john.doe@gmail.com")
+                    input(type="email" name="mail" placeholder="john.doe@gmail.com", value=(user && user.mail))
                 div.input
-                    input(type="text" for="password" placeholder="*************")
+                    input(type="password" name="password" placeholder="*************")
                 div.input
-                    input(type="text" for="password_confirm" placeholder="*************")
+                    input(type="password" name="password_confirm" placeholder="*************")
                 div.btn
                     button(type="submit") OK
