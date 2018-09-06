@@ -16,10 +16,14 @@ html(lang="en")
                     div.btn
                         a(href='/')
                             i(class="fas fa-home")
-                    div.btn
-                        a(href="/login") Connexion
-                    div.btn
-                        a(href="/register") Inscription
+                    if user
+                        div
+                            p Connecté en tant que #{user.firstname} #{user.lastname}
+                    else
+                        div.btn
+                            a(href="/login") Connexion
+                        div.btn
+                            a(href="/register") Inscription
         each val, key in flashMessages
             if key == 'success'
                 p.success #{val}

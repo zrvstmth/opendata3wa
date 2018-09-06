@@ -6,8 +6,8 @@ block content
             h1.titles Connexion/ Inscription
             form(action="/login" method="POST")
                 div.input
-                    input(type="mail" placeholder="john.doe@gmail.com")
+                    input(type="mail" name="mail" placeholder="john.doe@gmail.com")
                 div.input
-                    input(type="text" placeholder="*************")
+                    input(type="password" name="password" placeholder="*************")
                 div.btn
                     button(type="submit") OK
