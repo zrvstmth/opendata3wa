@@ -49,4 +49,11 @@ module.exports = function(app, passport) {
             res.render("register.pug", {err: err.errors, user: req.body});
         });
     });
+
+    app.get('/logout', function(req, res){
+        req.session.destroy();
+        req.logout();
+        // res.send("logged out", 401);
+        res.redirect('/');
+    });
 }

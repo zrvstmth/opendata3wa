@@ -39,7 +39,7 @@ userSchema.statics.register = function(firstname, lastname, email, password, pas
     {
         // console.log('Mot de passe différent');
         // Format erreur de mongoose -> err.errors.message
-        return Promise.reject({ errors: [new Error('Le mot de passe n\'est pas valide')] })
+        return Promise.reject({ errors: [new Error('Le mot de passe n\'est pas identique')] })
     }
 };
 

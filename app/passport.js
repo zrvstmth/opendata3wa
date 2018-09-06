@@ -9,6 +9,15 @@ module.exports = function(passport) {
         usernameField: 'mail', // en fonction du name="" du champs input type text
         passwordFIeld: 'password' // en fonction du name="" du champs input type password
     }
+    
+    passport.serializeUser(function(user, done) {
+        done(null, user);
+      });
+      
+    passport.deserializeUser(function(user, done) {
+        done(null, user);
+    });
+
     passport.use(
         new LocalStrategy(localStrategyConfig, (email, password, done) => {
             // On vérifie ici les identifiants de notre utilisateur
@@ -39,7 +48,7 @@ module.exports = function(passport) {
                     done(null, user);
                 })
                 .catch( (err) => {
-                    if(err) 
+                    if(err)
                     {
                         done(null, false, {message: err.message});
                     }

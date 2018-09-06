@@ -17,8 +17,11 @@ html(lang="en")
                         a(href='/')
                             i(class="fas fa-home")
                     if user
-                        div
-                            p Connecté en tant que #{user.firstname} #{user.lastname}
+                        div.btn
+                            a(href="/logout") Déconnexion
+                        div.user_connected
+                            p Connecté en tant que 
+                                span.user_connected_info #{user.firstname} #{user.lastname}
                     else
                         div.btn
                             a(href="/login") Connexion
