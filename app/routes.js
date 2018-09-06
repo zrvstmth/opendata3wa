@@ -2,7 +2,6 @@ const User = require('./models/user.model');
 
 module.exports = function(app) {
     // Gestion des routes
-    // Quelque part
     app.get('/', function(req, res) {
         res.render('index', {pseudo: "Tim"});
     });
@@ -14,6 +13,7 @@ module.exports = function(app) {
     app.get('/register', function(req, res) {
         res.render('register');
     });
+    
     app.post('/register', function(req, res) {
         console.log(req.body);
         //On vient utiliser la méthode register du user.model (promesse)
@@ -24,9 +24,13 @@ module.exports = function(app) {
             req.body.password,
             req.body.password_confirm
         ).then(() => {
-            res.redirect('/?register=ok');
+            // comme la méthode register est une promesse, on peut utiliser then() & catch()
+            req.flash('success', 'Inscription réussie, vous pouvez maintenant vous connecter');
+            // On peut set un message flash qui apparaîtra suite à la redirection apres l'enregistrement du formulaire
+            res.redirect('/');
         }).catch((err) => {
-            res.render("register.pug", {err: err.errors, user: req.body})    
+            // Si il y a une erreur, on vient fournir du contenu pour l'afficher via le render sur le template Register | err.errors = erreurs rencontrées; req.body = ce que l'on a récupéré du formulaire lors de la tentative d'enregistrement
+            res.render("register.pug", {err: err.errors, user: req.body});
         });
     });
 }
