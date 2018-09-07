@@ -55,4 +55,23 @@ module.exports = function(passport) {
                 });
         })
     );
+
+    passport.use(new GithubStrategy({
+        clientID: process.env.GITHUB_CONSUMER_KEY,
+        clientSecret: process.env.GITHUB_CONSUMER_SECRET,
+        callbackURL: `http://${process.env.SERVER_NAME}:${process.env.SERVER_PORT}/auth/github/callback`
+    },
+        function(token, tokenSecret, profile, cb) {
+            // User.findOrCreate({githubId: profile.id}, function(err, user) {
+            //     return cb(err, user);
+            // });
+            User.signupViaGithub(profile)
+                .then((user) => {
+                    cb(null, user)
+                })
+                .catch((err) => {
+                    cb(err, false);
+                });
+        }
+    ));
 }

@@ -109,6 +109,26 @@ form button[type="submit"]:hover  {
 .container_login form > * {
     padding-bottom: 40px;
 }
+.container_login .connect_github {
+    display: table;
+    margin: 0 auto;
+}
+.container_login .connect_github span {
+    align-self: center;
+}
+.container_login .connect_github a {
+    /* max-width: 400px;
+    width: 100%; */
+    display: flex;
+    align-content: center;
+}
+.container_login .connect_github a:hover {
+    background-color: black;
+    color: white;
+}
+.container_login .connect_github a i {
+    padding-right: 10px;
+}
 /* .input {
     padding-bottom: 40px;
 } */

@@ -3,7 +3,7 @@ extends master.pug
 block content
     div.container_login
         div.page_hero
-            h1.titles Connexion/ Inscription
+            h1.titles Connexion
             form(action="/login" method="POST")
                 div.input
                     input(type="mail" name="mail" placeholder="john.doe@gmail.com")
@@ -11,3 +11,8 @@ block content
                     input(type="password" name="password" placeholder="*************")
                 div.btn
                     button(type="submit") OK
+        div.btn.connect_github
+            //- <a href='/auth/github'><i class="fab fa-github"></i>Connexion avec github</a>
+            a(href='/auth/github')
+                i.fab.fa-2x.fa-github
+                span Connexion avec github

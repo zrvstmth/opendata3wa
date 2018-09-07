@@ -29,10 +29,13 @@ html(lang="en")
                             a(href="/register") Inscription
         each val, key in flashMessages
             if key == 'success'
-                p.success #{val}
+                p.success.auto_message #{val}
             else
-                p.error #{val}
+                p.error.auto_message #{val}
         main
             block content
             
         footer
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        script(src="js/script.js")

@@ -25,6 +25,13 @@ module.exports = function(app, passport) {
         failureFlash: true,
         successFlash: {message: 'Connexion réussie. Bienvenue !'}
     }));
+    app.get('/auth/github', passport.authenticate('github'));
+    app.get('/auth/github/callback', passport.authenticate('github', {
+    	successRedirect: '/',
+        failureRedirect: '/login',
+        failureFlash: true,
+        successFlash: { message: 'Connexion réussie avec Github. Bienvenue !' }
+    }));
 
     app.get('/register', function(req, res) {
         res.render('register');
